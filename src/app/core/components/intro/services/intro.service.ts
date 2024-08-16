@@ -17,7 +17,7 @@ export class IntroService {
   constructor(private http:HttpClient) { }
 
   getIntroData():Observable<IntroData[]>{
-    return this.http.get<IntroData[]>(`${environment.Url}/Portfolio/GetDetails`);
+    return this.http.get<IntroData[]>(`${environment.Url_api}/Portfolio/GetDetails`);
   }
 
   // getTechSkills():Observable<Skills[]>{

@@ -22,23 +22,23 @@ export class PortfolioService {
 
   
   getTechSkills(): Observable<TechSkills[]> {
-    return this.http.get<TechSkills[]>(`${environment.Url}/Skill/GetTechSkills`);
+    return this.http.get<TechSkills[]>(`${environment.Url_api}/Skill/GetTechSkills`);
   }
 
   getSoftSkills(): Observable<SoftSkills[]> {
-    return this.http.get<SoftSkills[]>(`${environment.Url}/Skill/GetSoftSkills`);
+    return this.http.get<SoftSkills[]>(`${environment.Url_api}/Skill/GetSoftSkills`);
   }
   
   getProjects(): Observable<Projects[]> {
-    return this.http.get<Projects[]>(`${environment.Url}/Portfolio/GetProjects`);
+    return this.http.get<Projects[]>(`${environment.Url_api}/Portfolio/GetProjects`);
   }
 
   getExperience():Observable<MyExperience[]>{
-    return this.http.get<MyExperience[]>(`${environment.Url}/Portfolio/GetExperience`);
+    return this.http.get<MyExperience[]>(`${environment.Url_api}/Portfolio/GetExperience`);
   }
 
   getcertificates():Observable<Certificates[]>{
-    return this.http.get<Certificates[]>(`${environment.Url}/Portfolio/GetCertificates`);
+    return this.http.get<Certificates[]>(`${environment.Url_api}/Portfolio/GetCertificates`);
   }
 
   // // Method to get experience total from MyExperienceComponent
