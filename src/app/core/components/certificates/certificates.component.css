@@ -1,0 +1,123 @@
+
+.certifiacte-left-section {
+  width: 50vw; /* 50% of the viewport width */
+    /* background-color: #f4f4f4; Background color for certificates section */
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* padding: 20px; */
+    /* box-sizing: border-box; */
+    margin-top: 20px; /* Space between sections */
+    margin-left: 0; /* Align to the left */
+    margin-right: 50vw; /* Optional: Add space between certificates and the next component */
+}
+
+.certifiacte-left-section{
+  width: 50vw;
+}
+.card {
+    position: relative;
+    margin-top: 20px;
+    width: 550px;
+    height: 140px;
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 8px; /* Slightly larger border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    overflow: hidden; /* Ensure the overlay stays within card boundaries */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    background-color: #ffffff; /* White background for the card */
+  }
+  
+  .card:hover {
+    transform: scale(1.03); /* Slightly scale up the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .card-body {
+    padding: 20px;
+    height: 350px; /* Fixed height for the card body */
+    color: #333; /* Dark grey text color */
+  }
+  
+  .card-title {
+    
+    font-size: 1.5rem; /* Slightly larger font size */
+    margin-bottom: 10px;
+    color: #092543; /* Dark blue color for title */
+  }
+  
+  .card-text {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 0.875rem; /* Slightly smaller font size for text */
+    color: #555; /* Medium grey color for text */
+  }
+  
+  .card-text strong {
+    color: #092543; /* Dark blue color for labels */
+  }
+  
+  .view-btn {
+    position: absolute; /* Positioning the button absolutely within the card */
+    bottom: 15px; /* Space from the bottom of the card */
+    right: 15px; /* Space from the right of the card */
+    padding: 10px 20px;
+    background-color: #092543; /* Dark blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .view-btn:hover {
+    background-color: #527ed6; /* Darker blue shade on hover */
+  }
+  
+  /* Overlay styles */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Darker background with more opacity */
+    backdrop-filter: blur(10px); /* Blur the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .overlay-img {
+    max-width: 50vw;
+    max-height: 40vh;
+    object-fit: contain;
+    border-radius: 8px; /* Rounded corners for the image */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #092543; /* Dark blue color for the close button */
+    z-index: 1000; /* Ensure the button is on top of the overlay */
+  }
+  
+  .close-btn:hover {
+    background: #f0f0f0; /* Light grey background on hover */
+  }
+  

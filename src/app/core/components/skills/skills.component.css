@@ -1,0 +1,85 @@
+/* skills.component.css */
+.skills-container {
+  display: flex;
+  width: 100%;
+  height: auto; /* Adjust height if needed */
+}
+
+.left-side,
+.right-side {
+  width: 50vw; /* Each side takes up 50% of viewport width */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-side {
+  background-color: #f4f4f4; /* Background color for the soft skills section */
+  border-right: 1px solid #ddd; /* Border between left and right sections */
+  margin-right: 5%;
+}
+
+.right-side {
+  background-color: #f4f4f4; /* Background color for the tech skills section */
+  margin-left: 5%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.soft-skills-grid,
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.soft-skill-card,
+.skill-card {
+  width: calc(50% - 20px); /* Adjust width as needed */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.soft-skill-card:hover,
+.skill-card:hover {
+  background-color: #e0f7fa;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.soft-skill-card h3,
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+.soft-skill-card p,
+.skill-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .left-side,
+  .right-side {
+    width: 100%; /* Full width on small screens */
+    border-right: none; /* Remove border on small screens */
+  }
+  
+  .soft-skill-card,
+  .skill-card {
+    width: calc(100% - 20px); /* Full width minus gap on small screens */
+  }
+}

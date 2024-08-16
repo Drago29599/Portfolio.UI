@@ -1,0 +1,10 @@
+<div *ngIf="project">
+    <h2>{{ project.title }}</h2>
+    <p><strong>Description:</strong> {{ project.description }}</p>
+    <p><strong>Frontend Technology:</strong> {{ project.frontendTech }}</p>
+    <p><strong>Backend Technology:</strong> {{ project.backendTech }}</p>
+    <p><strong>Database:</strong> {{ project.databaseType }}</p>
+    <p><strong>Creation Date:</strong> {{ project.creationDate | date }}</p>
+    <a [href]="project.url" target="_blank">View Project</a>
+  </div>
+  

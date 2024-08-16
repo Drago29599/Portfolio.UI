@@ -1,0 +1,137 @@
+/* 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+.intro-container {
+  text-align: center;
+}
+
+.intro-section {
+  padding: 20px;
+}
+
+.intro-item {
+  margin-bottom: 20px;
+}
+
+
+  .intro-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-item {
+    margin-bottom: 40px;
+  }
+  
+  .intro-item h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .intro-item p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 600px;
+    margin: 10px auto;
+  }
+  
+  .intro-item p span.highlight {
+    font-weight: bold;
+    color: #333;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .intro-item h1 {
+      font-size: 2em;
+    }
+  
+    .intro-item p {
+      font-size: 1em;
+    }
+  }
+   */
+
+   /* app.component.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.left-container {
+  width: 35vw; /* 30% viewport width */
+  height: 80vh; /* 80% viewport height */
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+}
+
+.image-section {
+  width: 70%;
+  background-color: #ffffff; /* White background for the image container */
+  margin-top: 100px;
+  margin-left: 100px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.image-section img {
+  display: block; /* Make sure the image is not set to `display: none` */
+  width: 100%; /* Adjust width if necessary */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for the image itself */
+  
+}
+
+
+.right-container {
+  flex: 1; /* Fill remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.right-top-container {
+  height: 50vh; /* 30% viewport height */
+  /* background-color: #e9ecef; */
+  margin-top: 90px;
+  margin-left: 50px;
+  padding: 20px;
+  /* border-bottom: 1px solid #ddd; */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.intro-section h1 {
+  color: #092543; /* Dark blue color */
+}
+
+.intro-section p {
+  color: #555; /* Medium grey color */
+}
+
+.highlight {
+  color: #092543; /* Dark blue color for highlights */
+}
+
+.right-bottom-container {
+  flex: 1; /* Fill remaining space */
+  background-color: #dee2e6;
+  padding: 20px;
+  overflow-y: auto; /* Scroll if content overflows */
+}

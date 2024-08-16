@@ -1,0 +1,96 @@
+/* projects.component.css */
+
+/* Container for projects */
+.projects-container {
+  width: 90vw; /* Set the container width to 90% of viewport width */
+  margin: 0 auto; /* Center the container horizontally */
+  padding-left: 5%;
+}
+
+/* Grid for projects */
+.projects-grid {
+  /* Removed flex properties, using Bootstrap's grid system instead */
+}
+
+/* Project card styling */
+.project-card {
+  background-color: #fff; /* Background color for the cards */
+  border: 1px solid #ddd; /* Border color for the cards */
+  border-radius: 8px; /* Rounded corners for the cards */
+  padding: 20px; /* Padding inside the cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for the cards */
+}
+
+/* Project card hover effect */
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Title styling */
+.project-title {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+/* Description styling */
+.project-description {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Tech styling */
+.project-tech {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Date styling */
+.project-date {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #777;
+}
+
+/* URL styling */
+.project-url {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-url:hover {
+  text-decoration: underline;
+}
+
+/* Modal styling */
+.modal-dialog {
+  max-width: 80vw; /* 80% of the viewport width */
+  max-height: 80vh; /* 80% of the viewport height */
+  margin-top: 20px;
+}
+
+.modal-content {
+  height: 100%; /* Full height of the modal dialog */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body {
+  overflow-y: auto; /* Add vertical scroll if content overflows */
+  flex: 1 1 auto; /* Allows modal body to grow and shrink */
+}
+
+.modal-footer {
+  margin-top: auto; /* Push footer to the bottom of the modal */
+}
+
+/* Center section title */
+.section-title {
+  text-align: center; /* Center the text horizontally */
+  margin-bottom: 20px; /* Space below the title */
+}

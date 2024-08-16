@@ -1,0 +1,53 @@
+<!-- my-experience.component.html -->
+<div class="experience-container">
+    <h2 class="section-title">My Career Journey</h2>
+    <div class="horizontal-timeline">
+        <div class="timeline-line" id="timelineLine"></div>
+        <div class="timeline-items">
+            <div *ngFor="let exp of experience$ | async" class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-text-above">
+                        <h4>{{ exp.role }}</h4>
+                        <p>{{ exp.designation }}</p>
+                        <p>{{ exp.company }}</p>
+                    </div>
+                    <div class="timeline-dot" (click)="openDetailModal(exp)"></div>
+                    <div class="timeline-text-below">
+                        <p><strong>{{ exp.startDate | date }} - {{ getExperienceDisplayEndDate(exp.endDate) }}</strong></p>
+                        <p><strong>Experience:</strong> {{ getExperienceDuration(exp.startDate, exp.endDate) }}</p>
+                    </div>
+                </div>
+                <!-- Optional: Skills Display -->
+                <!-- <p><strong>Skills : </strong> {{exp.skills}}</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for showing experience details -->
+<div class="modal fade" id="experienceDetailModal" tabindex="-1" role="dialog" aria-labelledby="experienceDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="experienceDetailModalLabel">Experience Details</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="selectedExperience">
+                    <h4>{{ selectedExperience.role }}</h4>
+                    <p><strong>Designation:</strong> {{ selectedExperience.designation }}</p>
+                    <p><strong>Company:</strong> {{ selectedExperience.company }}</p>
+                    <p><strong>Skills:</strong> {{ selectedExperience.skills }}</p>
+                    <p><strong>Start Date:</strong> {{ selectedExperience.startDate | date }}</p>
+                    <p><strong>End Date:</strong> {{ getExperienceDisplayEndDate(selectedExperience.endDate) }}</p>
+                    <p><strong>Duration:</strong> {{ getExperienceDuration(selectedExperience.startDate, selectedExperience.endDate) }}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

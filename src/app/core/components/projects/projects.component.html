@@ -1,0 +1,66 @@
+<!-- projects.component.html -->
+<div class="projects-container">
+  <h2 class="section-title">Projects</h2>
+  <div class="row projects-grid">
+    <div *ngFor="let project of projects$ | async" class="col-md-6 mb-4">
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <p class="project-tech"><strong>Frontend:</strong> {{ project.frontendTech }}</p>
+          <p class="project-tech"><strong>Backend:</strong> {{ project.backendTech }}</p>
+          <p class="project-tech"><strong>Database:</strong> {{ project.databaseType }}</p>
+          <p class="project-date"><strong>Creation Date:</strong> {{ project.creationDate | date }}</p>
+          <a [href]="project.url" target="_blank" class="project-url">View Project</a>
+          <button class="btn btn-primary" style="margin-left:10px;" (click)="openOverviewModal(project)">Overview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="projectOverviewModal" tabindex="-1" role="dialog" aria-labelledby="projectOverviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectOverviewModalLabel">Project Overview</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="selectedProject">
+          <h4>{{ selectedProject.title }}</h4>
+          <p>{{ selectedProject.description }}</p>
+          <p><strong>Frontend Tech:</strong> {{ selectedProject.frontendTech }}</p>
+          <p><strong>Backend Tech:</strong> {{ selectedProject.backendTech }}</p>
+          <p><strong>Database Type:</strong> {{ selectedProject.databaseType }}</p>
+          <p><strong>Creation Date:</strong> {{ selectedProject.creationDate | date }}</p>
+          <a [href]="selectedProject.url" target="_blank">View Project</a>
+          
+          <!-- Carousel -->
+          <!-- <div id="projectImagesCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let image of selectedProject; let i = index" [ngClass]="{'active': i === 0}" class="carousel-item">
+                <img [src]="image" class="d-block w-100" alt="Project Image">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectImagesCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectImagesCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+/* my-experience.component.css */
+.experience-container {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(224, 220, 220);
+}
+
+.horizontal-timeline {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%; /* Center the line vertically */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+    background-color:#d2760d; /* Line color */
+    z-index: 1;
+    opacity: 0; /* Initially hidden */
+}
+
+.timeline-line.animate {
+    animation: line-move 2s ease-in-out; /* Adjust animation time */
+    opacity: 1; /* Make it visible */
+}
+
+/* Define keyframes for line animation */
+@keyframes line-move {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.timeline-items {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items don't wrap to a new line */
+    gap: 20px; /* Space between items */
+    position: relative;
+    z-index: 2;
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.timeline-item {
+    position: relative;
+    width: calc(25% - 20px); /* 4 items per line with gaps */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-text-above {
+    text-align: center;
+    margin-bottom: 0px; /* Space between text and dot */
+    color: rgb(171, 169, 169);
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #d2760d; /* Dot color */
+    border-radius: 50%;
+    margin-top: 5px;
+    position: absolute;
+    top: 50%; /* Center the dot vertically relative to the line */
+    transform: translateY(-50%); /* Adjust position to center dot */
+    z-index: 2;
+}
+
+.timeline-text-below {
+    text-align: center;
+    margin-top: 50px; /* Space between dot and text */
+    color: rgb(171, 169, 169);
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        width: calc(50% - 20px); /* 2 items per line on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        width: calc(100% - 20px); /* 1 item per line on very small screens */
+    }
+}
+
+/* Modal styling */
+.modal-dialog {
+    max-width: 80vw;
+    max-height: 80vh;
+    margin-top: 20px;
+}
+
+.modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex: 1 1 auto;
+}
+
+.modal-footer {
+    margin-top: auto;
+}
