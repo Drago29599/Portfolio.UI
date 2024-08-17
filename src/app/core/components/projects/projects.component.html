@@ -7,12 +7,19 @@
         <div class="project-content">
           <h3 class="project-title">{{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
-          <p class="project-tech"><strong>Frontend:</strong> {{ project.frontendTech }}</p>
-          <p class="project-tech"><strong>Backend:</strong> {{ project.backendTech }}</p>
-          <p class="project-tech"><strong>Database:</strong> {{ project.databaseType }}</p>
+          <div class="project-tech-group">
+            <span class="project-tech frontend-tech"><strong>Frontend:</strong> {{ project.frontendTech }}</span>
+            <span class="project-tech backend-tech"><strong>Backend:</strong> {{ project.backendTech }}</span>
+            
+          </div>
+          <span class="project-tech"><strong>Database:</strong> {{ project.databaseType }}</span>
+          <!-- <p class="project-tech"><strong>Database:</strong> {{ project.databaseType }}</p> -->
           <p class="project-date"><strong>Creation Date:</strong> {{ project.creationDate | date }}</p>
-          <a [href]="project.url" target="_blank" class="project-url">View Project</a>
-          <button class="btn btn-primary" style="margin-left:10px;" (click)="openOverviewModal(project)">Overview</button>
+          <!-- <a [href]="project.url" target="_blank" class="project-url">View Project</a> -->
+        </div>
+        <div class="project-buttons">
+          <a [href]="project.url" target="_blank" class="btn btn-primary">View Project</a>
+          <button class="btn btn-secondary" (click)="openOverviewModal(project)">Overview</button>
         </div>
       </div>
     </div>

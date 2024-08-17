@@ -1,21 +1,33 @@
 /* skills.component.css */
+
 .skills-container {
   display: flex;
   width: 100%;
   height: auto; /* Adjust height if needed */
+  position: relative; /* Ensure the line can be positioned absolutely within this container */
 }
 
+/* Line styling */
+.line {
+  position: absolute;
+  background-color: #d2760d; /* Line color */
+  z-index: 1;
+}
+
+/* Desktop View - Vertical Line */
 .left-side,
 .right-side {
   width: 50vw; /* Each side takes up 50% of viewport width */
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 15px;
 }
 
 .left-side {
   background-color: #f4f4f4; /* Background color for the soft skills section */
-  border-right: 1px solid #ddd; /* Border between left and right sections */
+  /* border-right: 1px solid #ddd; Border between left and right sections */
   margin-right: 5%;
+  
 }
 
 .right-side {
@@ -71,15 +83,55 @@
   color: #666;
 }
 
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
-  .left-side,
-  .right-side {
-    width: 100%; /* Full width on small screens */
+  .skills-container {
+    flex-direction: column; /* Stack left and right sections vertically */
+  }
+
+  .left-side{
+    width: 90%; /* Full width on small screens */
     border-right: none; /* Remove border on small screens */
+    border-bottom: 1px solid #ddd; /* Add bottom border for separation */
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+
+  .right-side {
+    width: 90%; /* Full width on small screens */
+    border-right: none; /* Remove border on small screens */
+    /* border-bottom: 1px solid #ddd; Add bottom border for separation */
+    
+    margin-left: 5%;
   }
   
   .soft-skill-card,
   .skill-card {
     width: calc(100% - 20px); /* Full width minus gap on small screens */
+    margin-left: 5%; /* Remove left margin */
+    margin-bottom: 20px;
+  }
+  
+  .soft-skills-grid,
+  .skills-grid {
+    display: block; /* Stack cards vertically */
+    gap: 15px; /* Adjust gap between cards if needed */
+  }
+
+  /* Line positioning for mobile */
+  .line {
+    top: 50%; /* Center the line vertically in the viewport */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Line thickness */
+    transform: translateY(-50%); /* Center the line vertically */
+  }
+}
+
+/* Ensure even smaller screens are still readable */
+@media (max-width: 480px) {
+  .soft-skill-card,
+  .skill-card {
+    padding: 15px; /* Adjust padding for very small screens */
   }
 }

@@ -1,41 +1,49 @@
 <router-outlet></router-outlet>
 
-<div class="main-container">
-  <div class="left-container">
-    <div class="image-section">
-      <img src="assets/Profile.jpg" alt="Profile Image">
-    </div>
-  </div>
-  <div class="right-container">
-    <div class="right-top-container">
-      <div class="intro-section" *ngIf="introData$ | async as data">
-        <div *ngFor="let item of data" class="intro-item">
-          
-            <h1>Hi, I am {{ item.name }}</h1>
-            <h4><strong>{{ item.role }}</strong> | <strong style="color: rgb(37, 47, 123);"><img src="assets/cognizant_logo.jpg" height="25px" width="30px"> {{ item.companyName }}</strong></h4>
-             <!-- Display total experience -->
-             
-            <div *ngIf="totalExperience$ | async as totalExperience">
-              <h5>Total Experience: {{ totalExperience }}</h5>
-            </div>
-            <h5> Vishwakarma Institute Of Information Technology
-            </h5>
-            <p>{{ item.description }}</p>
-            <!-- <p>Explore my work and feel free to get in touch!</p> -->
-            <p>
-              <strong style="color: rgb(31, 25, 25); font-size: 17px;"><img src="assets/outlook_logo.jpg" height="25px" width="30px">  Email : </strong> 
-              <a href="mailto: Prathmesh.Patil29@outlook.com" class="contact-link"> Prathmesh.Patil29@outlook.com</a>
-            </p>
-            <p>
-              <strong style="color: rgb(31, 25, 25); font-size: 17px;"><img src="assets/LinkedIn_logo.jpg" height="28px" width="28px"> LinkedIn : </strong> 
-              <a href="" class="contact-link" target="_blank">LinkedIn Profile</a>
-            </p>
-          </div>
-        
+<div class="container-fluid">
+  <div class="row">
+    <!-- Image Section -->
+    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center mb-4 mb-md-0">
+      <div class="image-section">
+        <img src="assets/profile_pink.jpg" alt="Profile Image" class="img-fluid">
       </div>
     </div>
-    <div class="right-bottom-container">
-      <!-- Additional content for bottom right section -->
+    
+    <!-- Intro Section -->
+    <div class="col-12 col-md-8 d-flex flex-column">
+      <div class="intro-section flex-grow-1" *ngIf="introData$ | async as data">
+        <div *ngFor="let item of data" class="intro-item">
+          <h1>Hi, I am {{ item.name }}</h1>
+          <h4>
+            <strong>{{ item.role }}</strong> | 
+            <strong style="color: rgb(37, 47, 123);">
+              <img src="assets/cognizant_logo.jpg" height="25px" width="30px"> 
+              {{ item.companyName }}
+            </strong>
+          </h4>
+          <div *ngIf="totalExperience$ | async as totalExperience">
+            <h5>Total Experience: {{ totalExperience }}</h5>
+          </div>
+          <h5>Vishwakarma Institute Of Information Technology</h5>
+          <p>{{ item.description }}</p>
+          <p>
+            <strong style="color: rgb(31, 25, 25); font-size: 17px;">
+              <img src="assets/outlook_logo.jpg" height="25px" width="30px"> Email: 
+            </strong> 
+            <a href="mailto: Prathmesh.Patil29@outlook.com" class="contact-link"> Prathmesh.Patil29@outlook.com</a>
+          </p>
+          <p>
+            <strong style="color: rgb(31, 25, 25); font-size: 17px;">
+              <img src="assets/LinkedIn_logo.jpg" height="28px" width="28px"> LinkedIn: 
+            </strong> 
+            <a href="" class="contact-link" target="_blank">LinkedIn Profile</a>
+          </p>
+        </div>
+      </div>
+      <div class="right-bottom-container">
+        
+        <p>Some text or additional content here.</p>
+      </div>
     </div>
   </div>
 </div>

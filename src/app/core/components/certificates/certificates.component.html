@@ -1,16 +1,15 @@
 <div class="container">
-  <div class="certifiacte-left-section">
+  <div class="section-title-container">
     <h3 class="section-title">My Certifications</h3>
-    <!-- <div class="row"> -->
-      <div class="col-md-3" *ngFor="let certificate of certificates$ | async">
-        <div class="card mb-4" (mouseover)="showOverlay(certificate)" (mouseleave)="hideOverlay()">
+  </div>
+  <div class="certificates-section">
+    <div class="certifiacte-left-section">
+      <div class="card-container">
+        <div class="card" *ngFor="let certificate of certificates$ | async" (mouseover)="showOverlay(certificate)" (mouseleave)="hideOverlay()">
           <div class="card-body">
             <h5 class="card-title">{{certificate.name}}</h5>
             <p class="card-text"><strong>Issued By:</strong> {{certificate.issuedBy}} <strong>| Issued Date:</strong> {{certificate.issuedDate | date}}</p>
-            <p class="card-text"></p>
             <p class="card-text"><strong>Credentials:</strong> {{certificate.credentials}}</p>
-            <!-- <p class="card-text"><strong>URL:</strong> <a [href]="certificate.url" target="_blank">{{certificate.url}}</a></p> -->
-            <!-- <button class="view-btn" href="{{certificate.url}}">View Certificate</button> -->
             <a class="view-btn" [href]="certificate.url" target="_blank">View Certificate</a>
           </div>
           <div class="overlay" *ngIf="selectedCertificate === certificate">
@@ -18,12 +17,10 @@
             <img [src]="selectedCertificate.image" class="overlay-img" alt="Certificate Image">
           </div>
         </div>
-      <!-- </div> -->
+      </div>
+    </div>
+    <div class="certificate-right-section">
+      <img src="/assets/certificate_background.png" alt="certificate">
     </div>
   </div>
-  <div class="certificate-right-section">
-
-  </div>
-    
-  </div>
-  
+</div>

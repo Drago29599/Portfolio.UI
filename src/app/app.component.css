@@ -4,23 +4,30 @@
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally */
-    background-color: rgb(49, 47, 47);
+    /* background-color: rgb(49, 47, 47); */
   }
   
   app-intro {
     width: 100%; /* Make the intro component take up the full width */
+    /* height: 760px; */
     padding: 20px;
     box-sizing: border-box;
-    background-color: #f9f9f9; /* Background color for the intro section */
+    background-color: #f4f5f5; /* Background color for the intro section */
     /* border-bottom: 1px solid #ddd; Add a bottom border to separate sections */
+    /* background-image: url('/assets/Quick_notes.jpg');  */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+
   }
   
   app-skills {
     width: 90vw; /* 50% of the viewport width */
-    background-color: #f4f4f4; /* Background color for the skills section */
+    /* background-color: #9e8371; Background color for the skills section */
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* padding: 20px; */
     box-sizing: border-box;
     margin-top: 20px; /* Space between intro and skills */
     margin-bottom: 20px;
@@ -28,16 +35,32 @@
 
   app-certificates {
     width: 100vw;
-    background-color: #f4f4f4; 
+    background-color: #ffffff; 
     /* border-radius: 12px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-sizing: border-box;
-    margin-top: 20px; 
+    /* margin-top: 20px;  */
     margin-left: 0; 
     margin-right: 20px; 
+    margin-bottom: 20px;
 }
+
+app-my-experience {
+  width: 100vw;
+    background-color: #cdc8ca; 
+    padding-bottom: 50px;
+    /* margin-top: 30px; */
+    margin-bottom: 30px;
+}
+
+app-projects {
+  width: 100vw;
+  background-color: #acaeb5; 
   
+}
+
+
   @media (max-width: 768px) {
     app-skills {
       width: calc(100% - 40px); /* Full width minus padding for smaller screens */
